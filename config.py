@@ -1,0 +1,2 @@
+USE_PROXIES = True
+PROXY_TYPE = "https"
