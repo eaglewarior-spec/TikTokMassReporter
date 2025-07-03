@@ -222,10 +222,8 @@ async def start(url, amount, threads):
         async with ClientSession() as session:
             tasks = []
             for _ in range(threads):
-                thread_tasks = []
                 for _ in range(amount):
-                    thread_tasks.append(report(url, proxies, session))
-                tasks.append(thread_tasks)
+                    tasks.append(report(url, proxies, session))
             await asyncio.gather(*tasks)
     else:
         async with ClientSession() as session:
